@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MovieStoreService} from "../movie-store.service";
+import {MovieStoreService} from '../movie-store.service';
 
 @Component({
   selector: 'app-card-teaser',
@@ -12,17 +12,17 @@ export class CardTeaserComponent implements OnInit {
     private mss: MovieStoreService
   ) { }
 
-  movie : any;
+  movie : any;;
   cast: any;
 
   ngOnInit(): void {
     // get movie
-    this.mss.fetchSingleMovieOrShow('movie','458576')
-      .subscribe(res => this.movie = res,error => this.movie = null)
+    this.mss.fetchSingleMovieOrShow('movie', '497582')
+      .subscribe(res => this.movie = res, error => this.movie = null);
 
     // get movie cast
-    this.mss.fetchCredits('movie','458576')
-      .subscribe(res => this.cast = res.cast,error => this.cast = null)
+    this.mss.fetchCredits('movie', '497582')
+      .subscribe(res => this.cast = res.cast, error => this.cast = null);
   }
 
 }

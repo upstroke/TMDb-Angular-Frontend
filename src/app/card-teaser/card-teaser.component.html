@@ -12,6 +12,11 @@
   <div class="content">
     <h4 class="ui sub header">
       GENRE: <span *ngFor="let element of movie.genres; let i = index">{{element.name}} {{i+1 < movie.genres.length ? " / " : ""}}</span>
+      <div class="rating">
+        <span>Rating:&nbsp;</span>
+        <i class="yellow star icon"></i>
+        <small class="ui label">{{movie.vote_average | number:'1.1-2'}}</small>
+      </div>
     </h4>
     <div class="ui feed">
       <div class="event">
@@ -25,9 +30,9 @@
       <div class="content">
         <h3 class="ui dividing header">Produktion:</h3>
         <div class="ui equal width grid">
-          <div class="column" *ngFor="let url of movie.production_companies">
-            <ng-container *ngIf="!url.logo_path"><img class="companyIMG" src="./assets/not-available.png" alt="" /></ng-container>
-            <ng-container *ngIf="url.logo_path"><img src="http://image.tmdb.org/t/p/w92/{{url.logo_path}}" alt="" title="{{url.name}}"/></ng-container>
+          <div class="column" *ngFor="let company of movie.production_companies">
+            <strong *ngIf="company.name">{{company.name}}</strong>
+            <strong *ngIf="!company.name">keine Informationen vorhanden</strong>
           </div>
         </div>
       </div>

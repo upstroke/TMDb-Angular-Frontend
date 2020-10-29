@@ -13,7 +13,14 @@
   }
 
   .sub.header {
+    position: relative;
     text-transform: none;
+
+    .rating {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
 
   .content.has-header {

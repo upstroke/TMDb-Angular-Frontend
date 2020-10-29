@@ -20,7 +20,7 @@
           <div class="title">{{movie.title}}</div>
           <small class="ui mini basic label">
             <i class="yellow star icon"></i>
-            {{movie.vote_average}}
+            {{movie.vote_average | number:'1.1-2'}}
           </small>
         </div>
         <div class="description">
@@ -43,7 +43,7 @@
           <div class="title">{{tv.name}}</div>
           <small class="ui mini basic label">
             <i class="yellow star icon"></i>
-            {{tv.vote_average}}
+            {{tv.vote_average | number:'1.1-2'}}
           </small>
         </div>
         <div class="description">
