@@ -1,0 +1,27 @@
+<div class="image">
+  <img [src]='"http://image.tmdb.org/t/p/w342/"+movieOrShow.backdrop_path' *ngIf="movieOrShow.backdrop_path" />
+  <img src="assets/not-available.png" *ngIf="!movieOrShow.backdrop_path" />
+  <div [className]="movieOrShow.media_type==='movie' ? 'ui top right attached label blue' : 'ui top right attached label teal'">
+    {{movieOrShow.media_type}}
+  </div>
+</div>
+<div class="content">
+  <div class="header">{{movieOrShow.title ? movieOrShow.title : movieOrShow.name}}</div>
+  <div class="meta">
+    <span class="date" *ngIf="movieOrShow.media_type==='movie'">{{movieOrShow.release_date | date:'d'}}.{{movieOrShow.release_date | date:'M'}}.{{movieOrShow.release_date | date:'y'}}</span>
+    <span class="date" *ngIf="movieOrShow.media_type==='tv'">{{movieOrShow.first_air_date | date:'d'}}.{{movieOrShow.first_air_date | date:'M'}}.{{movieOrShow.first_air_date | date:'y'}}</span>
+
+  </div>
+  <!--<div class="description">
+    {{movieOrShow.overview ? movieOrShow.overview : 'keine Informationen vorhanden'}}
+  </div>-->
+</div>
+<div class="extra content">
+  <span>Rating:&nbsp;</span>
+  <i class="yellow star icon"></i>
+  <small class="ui label">{{movieOrShow.vote_average}}</small>
+</div>
+<div class="ui bottom attached button">
+  <i class="add icon"></i>
+  Weitere Informationen
+</div>

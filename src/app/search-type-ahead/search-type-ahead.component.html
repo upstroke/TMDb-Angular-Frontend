@@ -1,0 +1,49 @@
+<!-- input for typeahead search -->
+<div class="ui icon transparent inverted input" (mouseenter)="toggleResult('show')">
+  <input (keyup)="myKeyUpHandler($event)" class="prompt" type="text"
+         placeholder="Film oder TV-Serie finden"/>
+  <i class="search icon"></i>
+</div>
+
+<div class="results transition" [class.visible]="resultsVisible"  (mouseleave)="toggleResult('hide')">
+
+  <!-- search results movies -->
+  <div class="category">
+    <div class="name">
+      <p>Movies</p>
+      <small class="ui blue mini label">{{totalResultsMovie}}</small>
+    </div>
+
+    <div class="results transition visible">
+      <a class="result" *ngFor="let movie of resultsMovie" [routerLink]="['/details','movie',movie.id]" (click)="toggleResult('hide')">
+        <div class="content">
+          <div class="title">{{movie.title}}</div>
+        </div>
+        <div class="description">
+          <small>{{movie.release_date | date:'dd'}}.{{movie.release_date | date:'M'}}.{{movie.release_date | date:'y'}}</small>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- search results tv-shows -->
+  <div class="category">
+    <div class="name">
+      <p>TV-Shows</p>
+      <small class="ui teal mini label">{{totalResultsTvShow}}</small>
+    </div>
+
+    <div class="results transition visible">
+      <a class="result" *ngFor="let tv of resultsTvShow" [routerLink]="['/details','tv',tv.id]" (click)="toggleResult('hide')">
+        <div class="content">
+          <div class="title">{{tv.name}}</div>
+        </div>
+        <div class="description">
+          <small>{{tv.first_air_date | date:'dd'}}.{{tv.first_air_date | date:'M'}}.{{tv.first_air_date | date:'y'}}</small>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>
+

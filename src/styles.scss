@@ -1,0 +1,202 @@
+/* You can add global styles to this file, and also import other style files */
+.fixed.menu {
+  z-index: 1000;
+}
+
+main {
+  position: relative;
+  top: 6rem;
+  padding-bottom: 10rem;
+}
+
+.spacer {
+  margin: 1em 0;
+  padding: 1em 0;
+  position: relative;
+}
+
+.ui.cards > .card {
+  &:focus {
+    outline: none;
+  }
+
+  .content > .meta + .description {
+    height: 140px;
+    overflow: auto;
+    overflow-x: hidden;
+  }
+
+  .content.media-type {
+    max-height: 35px;
+    font-weight: bold;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: .5rem 0;
+  }
+
+  .image {
+    cursor: pointer;
+
+    > img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+  }
+}
+
+/* Details View */
+main.details-view {
+  margin-top: 0;
+  max-width: 1024px !important;
+
+  .overview {
+    white-space: pre-line;
+    max-width: 100%;
+    text-align: justify;
+  }
+
+  .home-link {
+    &:hover {
+      border-bottom: gray 0.02em solid;
+    }
+  }
+
+  h3.ui.header {
+    margin-bottom: .3rem;
+  }
+
+  ul {
+    margin-top: 0;
+    padding-left: 1.5rem;
+  }
+
+  .genres {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: right;
+    width: 100%;
+  }
+}
+
+.ui.masthead.segment {
+  padding: 0;
+  margin-top: 39px;
+  margin-bottom: -39px;
+  position: relative;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
+
+  .masthead-image {
+    img {
+      min-width: 100vw;
+      height: 100%;
+      max-height: 1000px;
+      object-fit: cover;
+      opacity: .5;
+    }
+  }
+
+  .header {
+    position: relative;
+    font-size: 3.5em;
+    font-weight: normal;
+    line-height: 1;
+
+    .poster {
+      width: 100%;
+      position: absolute;
+      bottom: 130%;
+      right: 0;
+      left: 0;
+
+      > img {
+        width: 12vw;
+        min-width: 160px;
+        box-shadow: 1px 0 5px 2px rgba(0,0,0,0.4);
+        border: 2px solid white;
+      }
+    }
+  }
+
+  .ui.text.container {
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    right: 0;
+    width: 80vw !important;
+    max-width: 80vw !important;
+  }
+
+  ul.ui.inverted {
+    list-style: none;
+    margin: 20px 0 0;
+    font-size: 80%;
+
+    > li {
+      display: inline-block;
+      margin-right: 1rem;
+    }
+
+    > li.item::before {
+      padding-right: 1rem;
+      content: "•";
+      color: white;
+    }
+
+    > li:first-child {
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+/* Top Menu with Search Bar */
+.right.menu.searchbar {
+  width: 100%;
+
+  .item {
+    width: 100%;
+  }
+
+  .category.search {
+    width: 100%;
+    margin-left: auto;
+
+    @media only screen and (min-width: 991px) {
+      width: 80%
+    }
+  }
+
+  .ui.icon.input {
+    position: absolute;
+    right: 0;
+    top: -8px;
+    width: 50%;
+  }
+
+  .ui.category.search .results {
+    width: 100%;
+
+    .category {
+      display: table;
+      width: 100%;
+    }
+
+    .category .results {
+      width: 100%
+    }
+  }
+
+  .ui[class*="left aligned"].search > .results {
+    top: 5px;
+    max-height: calc(100vh - 140px);
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .name {
+      margin-top: 6px;
+    }
+  }
+}

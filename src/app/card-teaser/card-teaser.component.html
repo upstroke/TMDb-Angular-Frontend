@@ -1,0 +1,72 @@
+<ng-container *ngIf="movie">
+  <div class="ui teaser card">
+  <div class="image">
+    <img *ngIf="!movie.backdrop_path" src="./assets/not-available.png" alt=""/>
+    <img *ngIf="movie.backdrop_path" src="http://image.tmdb.org/t/p/w780/{{movie.backdrop_path}}" />
+  </div>
+  <div class="content has-header">
+    <div class="header">
+      {{movie.title}}
+    </div>
+  </div>
+  <div class="content">
+    <h4 class="ui sub header">
+      GENRE: <span *ngFor="let element of movie.genres; let i = index">{{element.name}} {{i+1 < movie.genres.length ? " / " : ""}}</span>
+    </h4>
+    <div class="ui feed">
+      <div class="event">
+        <div class="content">
+          <h2>{{movie.original_title}}</h2>
+          <span class="releaseDate">
+        <strong>Erschienen: </strong>{{movie.release_date | date:'dd'}}.{{movie.release_date | date:'M'}}.{{movie.release_date | date:'y'}}
+      </span>
+        </div>
+      </div>
+      <div class="content">
+        <h3 class="ui dividing header">Produktion:</h3>
+        <div class="ui equal width grid">
+          <div class="column" *ngFor="let url of movie.production_companies">
+            <ng-container *ngIf="!url.logo_path"><img class="companyIMG" src="./assets/not-available.png" alt="" /></ng-container>
+            <ng-container *ngIf="url.logo_path"><img src="http://image.tmdb.org/t/p/w92/{{url.logo_path}}" alt="" title="{{url.name}}"/></ng-container>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="content">
+          <div class="summary">
+            <h3 class="ui dividing header">Cast:</h3>
+            <div class="ui grid">
+              <div class="four wide column cast" *ngFor="let element of cast">
+                <span class="header">{{element.character}}</span><br/>
+                <span class="meta">{{element.name}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="spacer">
+      <div class="content">
+        <h3 class="ui dividing header">Webseite:</h3>
+        <p><a href="{{movie.homepage}}" target="_blank">{{movie.homepage}}</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui bottom attached button">
+    <i class="add icon"></i>
+    Weitere Informationen
+  </div>
+</div>
+</ng-container>
+
+<ng-container *ngIf="!movie">
+  <div class="ui teaser card">
+    <div class="content">
+      <div class="ui active inverted dimmer">
+        <div class="ui text loader">Loading</div>
+      </div>
+      <img class="ui wireframe image" src="assets/not-available.png">
+    </div>
+  </div>
+</ng-container>

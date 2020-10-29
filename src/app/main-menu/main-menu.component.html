@@ -1,0 +1,20 @@
+<div class="ui top fixed inverted menu">
+  <div class="ui container">
+    <a class="item" routerLink="/home" routerLinkActive="active">
+      <i class="home icon"></i> Home
+    </a>
+    <a class="item" routerLink="/movies" routerLinkActive="active">
+      <i class="film icon"></i> Filme
+    </a>
+    <a class="item" routerLink="/tv-shows" routerLinkActive="active">
+      <i class="tv icon"></i> TV-Shows
+    </a>
+
+    <!-- typeahead search -->
+    <div class="right menu searchbar">
+      <div class="item">
+        <app-search-type-ahead class="ui left aligned transparent category search"></app-search-type-ahead>
+      </div>
+    </div>
+  </div>
+</div>

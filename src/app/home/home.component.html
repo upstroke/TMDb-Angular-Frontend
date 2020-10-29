@@ -1,0 +1,13 @@
+<main class="ui container">
+  <h2 class="ui dividing header right">Discover</h2>
+  <div class="spacer">
+    <p>Discover movies by different types of data like average rating, number of votes, genres and certifications.</p>
+  </div>
+
+  <app-card-list [type]="'trending/all/day'" [amount]=8></app-card-list>
+
+  <h2 class="ui dividing header">Featured Today</h2>
+  <app-card-teaser
+    [routerLink]="['/details','movie','458576']">
+  </app-card-teaser>
+</main>

@@ -1,0 +1,27 @@
+<div class="ui four cards">
+
+  <ng-container *ngIf="moviesOrShows">
+    <app-card-item class="card"
+       *ngFor="let movieOrShow of moviesOrShows | slice:0:amount"
+       [movieOrShow]="movieOrShow"
+       [routerLink]="['/details',movieOrShow.media_type,movieOrShow.id]">
+    </app-card-item>
+  </ng-container>
+
+  <!-- loading indicator -->
+  <ng-container *ngIf="!moviesOrShows">
+    <ng-container *ngFor="let item of [].constructor(4)">
+      <div class="card">
+        <div class="content">
+          <div class="ui active inverted dimmer">
+            <div class="ui text loader">Loading</div>
+          </div>
+          <img class="ui wireframe image" src="assets/not-available.png">
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+
+</div>
+
+
