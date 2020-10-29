@@ -187,6 +187,20 @@ main.details-view {
     .category .results {
       width: 100%
     }
+
+    .content {
+      position: relative;
+
+      .ui.basic.label {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        > .icon {
+          margin-right: 0;
+        }
+      }
+    }
   }
 
   .ui[class*="left aligned"].search > .results {
@@ -197,6 +211,10 @@ main.details-view {
 
     .name {
       margin-top: 6px;
+    }
+
+    .result .title {
+      padding-right: 40px;
     }
   }
 }

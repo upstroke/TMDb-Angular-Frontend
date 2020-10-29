@@ -18,6 +18,10 @@
       <a class="result" *ngFor="let movie of resultsMovie" [routerLink]="['/details','movie',movie.id]" (click)="toggleResult('hide')">
         <div class="content">
           <div class="title">{{movie.title}}</div>
+          <small class="ui mini basic label">
+            <i class="yellow star icon"></i>
+            {{movie.vote_average}}
+          </small>
         </div>
         <div class="description">
           <small>{{movie.release_date | date:'dd'}}.{{movie.release_date | date:'M'}}.{{movie.release_date | date:'y'}}</small>
@@ -37,6 +41,10 @@
       <a class="result" *ngFor="let tv of resultsTvShow" [routerLink]="['/details','tv',tv.id]" (click)="toggleResult('hide')">
         <div class="content">
           <div class="title">{{tv.name}}</div>
+          <small class="ui mini basic label">
+            <i class="yellow star icon"></i>
+            {{tv.vote_average}}
+          </small>
         </div>
         <div class="description">
           <small>{{tv.first_air_date | date:'dd'}}.{{tv.first_air_date | date:'M'}}.{{tv.first_air_date | date:'y'}}</small>
