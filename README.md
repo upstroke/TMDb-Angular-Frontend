@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## TMDb API key
 Thie site makes use of the TMDb API. Hence you need an API key. You can get this key by opening an account at their web seite @: https://developers.themoviedb.org/3/.
-After you obtained a key, alter the Angular environment files: "src/environments/environment.ts" and "src/environments/environment.prod.ts" with your key and you are good to go.
+Alter the Angular environment files: "src/environments/environment.ts" and "src/environments/environment.prod.ts" with your key and you are good to go.
 
 ## Development server
 
