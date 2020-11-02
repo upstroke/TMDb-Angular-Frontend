@@ -12,7 +12,7 @@ export class CardTeaserComponent implements OnInit {
     private mss: MovieStoreService
   ) { }
 
-  movie : any;;
+  movie: any;
   cast: any;
 
   ngOnInit(): void {
