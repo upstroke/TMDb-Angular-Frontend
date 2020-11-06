@@ -5,10 +5,10 @@
   <i class="search icon"></i>
 </div>
 
-<div class="results transition" [class.visible]="resultsVisible"  (mouseleave)="toggleResult('hide')">
+<div class="results transition" [ngClass]="resultsVisible ? 'visible' : 'hidden'"  (mouseleave)="toggleResult('hide')">
 
   <!-- search results movies -->
-  <div class="category">
+  <div class="category" [ngClass]="totalResultsMovie < 1 ? 'hidden' : ''">
     <div class="name">
       <p>Movies</p>
       <small class="ui blue mini label">{{totalResultsMovie}}</small>
@@ -31,7 +31,7 @@
   </div>
 
   <!-- search results tv-shows -->
-  <div class="category">
+  <div class="category" [ngClass]="totalResultsTvShow < 1 ? 'hidden' : ''">
     <div class="name">
       <p>TV-Shows</p>
       <small class="ui teal mini label">{{totalResultsTvShow}}</small>

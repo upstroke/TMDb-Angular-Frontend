@@ -15,6 +15,10 @@ main {
   position: relative;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .ui.cards > .card {
   &:focus {
     outline: none;
@@ -211,6 +215,10 @@ main.details-view {
 
     .name {
       margin-top: 6px;
+
+      p {
+        margin-bottom: .3em;
+      }
     }
 
     .result .title {
